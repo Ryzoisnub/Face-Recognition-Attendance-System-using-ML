@@ -1,24 +1,17 @@
-# --- Project Specific ---
-# Ignore the dataset folder containing images (too large for GitHub)
+# --- Large Data Folders (Exclude these!) ---
 dataset/
 lfw/
 
-# --- Python Standard ---
-# Byte-compiled / optimized / DLL files
+# --- Python Cache ---
 __pycache__/
 *.pyc
-*.pyo
-*.pyd
 
-# Virtual Environments (if you create one later)
-venv/
-env/
-.env
+# --- Generated Model (Optional) ---
+# This is the file created after training.
+# If it is larger than 100MB, GitHub will reject it, so it is safer to ignore it.
+# If it is small and you want to save your training progress, delete the line below.
+trainer.yml
 
-# --- IDE Settings ---
-# VS Code settings folder
+# --- VS Code & System Junk ---
 .vscode/
-
-# --- OS Generated Files ---
-.DS_Store
 Thumbs.db
