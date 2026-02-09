@@ -1,0 +1,24 @@
+# --- Project Specific ---
+# Ignore the dataset folder containing images (too large for GitHub)
+dataset/
+lfw/
+
+# --- Python Standard ---
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual Environments (if you create one later)
+venv/
+env/
+.env
+
+# --- IDE Settings ---
+# VS Code settings folder
+.vscode/
+
+# --- OS Generated Files ---
+.DS_Store
+Thumbs.db
