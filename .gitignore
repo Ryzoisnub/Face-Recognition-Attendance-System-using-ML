@@ -1,17 +1,32 @@
-# --- Large Data Folders (Exclude these!) ---
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+.env/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE / Editor
+.vscode/
+.idea/
+
+# Dataset (DO NOT PUSH FACE DATA)
 dataset/
 lfw/
 
-# --- Python Cache ---
-__pycache__/
-*.pyc
+# Trained models
+*.yml
+*.h5
+*.pkl
 
-# --- Generated Model (Optional) ---
-# This is the file created after training.
-# If it is larger than 100MB, GitHub will reject it, so it is safer to ignore it.
-# If it is small and you want to save your training progress, delete the line below.
-trainer.yml
+# Attendance outputs
+attendance_*.csv
 
-# --- VS Code & System Junk ---
-.vscode/
-Thumbs.db
+# Logs
+*.log
