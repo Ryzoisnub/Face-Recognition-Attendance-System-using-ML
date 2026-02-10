@@ -45,6 +45,9 @@ recognizer.save(model_path)
 
 attendance = []
 
+today = datetime.now().strftime("%Y-%m-%d")
+attendance_file = f"attendance_{today}.csv"
+
 cap = cv2.VideoCapture(0)
 
 while True:
@@ -60,11 +63,10 @@ while True:
 
         if confidence < 70:
             name = label_map[id_]
-            date = datetime.now().strftime("%Y-%m-%d")
             time = datetime.now().strftime("%H:%M:%S")
 
             if name not in [row[0] for row in attendance]:
-                attendance.append([name, date, time])
+                attendance.append([name, today, time])
 
             text = name
             color = (0, 255, 0)
@@ -85,4 +87,9 @@ cap.release()
 cv2.destroyAllWindows()
 
 df = pd.DataFrame(attendance, columns=["Name", "Date", "Time"])
-df.to_csv("attendance.csv", index=False)
+
+if os.path.exists(attendance_file):
+    old_df = pd.read_csv(attendance_file)
+    df = pd.concat([old_df, df]).drop_duplicates(subset=["Name"], keep="first")
+
+df.to_csv(attendance_file, index=False)
